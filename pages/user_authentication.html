@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Riva Jewels - Premium Artificial Jewelry</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body class="bg-background font-body">
+    <!-- Minimal Header -->
+    <header class="sticky top-0 z-50 bg-background shadow-card border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Back Button & Logo -->
+                <div class="flex items-center space-x-4">
+                    <button onclick="window.location.href='product_catalog_homepage.html'" class="p-2 text-text-secondary hover:text-primary transition-smooth touch-target">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <a href="product_catalog_homepage.html" class="flex items-center space-x-2">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L20 10H28L22 16L24 24L16 20L8 24L10 16L4 10H12L16 2Z"/>
+                        </svg>
+                        <span class="text-xl font-heading font-bold text-text-primary">Riva Jewels</span>
+                    </a>
+                </div>
+
+                <!-- Shopping Cart Icon -->
+                <div class="flex items-center">
+                    <a href="shopping_cart.html" class="relative p-2 text-text-secondary hover:text-primary transition-smooth touch-target">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m6-5v6a2 2 0 01-2 2H9a2 2 0 01-2-2v-6m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01"/>
+                        </svg>
+                        <span class="absolute -top-1 -right-1 bg-primary text-text-inverse text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium">3</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Authentication Content -->
+    <main class="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-100 py-8">
+        <div class="max-w-md mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Authentication Card -->
+            <div class="bg-background rounded-2xl shadow-card overflow-hidden">
+                <!-- Tab Navigation -->
+                <div class="flex border-b border-border">
+                    <button id="loginTab" class="flex-1 py-4 px-6 text-center font-medium transition-smooth bg-primary text-text-inverse">
+                        Sign In
+                    </button>
+                    <button id="registerTab" class="flex-1 py-4 px-6 text-center font-medium transition-smooth text-text-secondary hover:text-primary hover:bg-surface-100">
+                        Create Account
+                    </button>
+                </div>
+
+                <!-- Login Form -->
+                <div id="loginForm" class="p-6">
+                    <div class="text-center mb-6">
+                        <h2 class="text-2xl font-heading font-bold text-text-primary mb-2">Welcome Back!</h2>
+                        <p class="text-text-secondary">Sign in to your account to continue shopping</p>
+                    </div>
+
+                    <form class="space-y-4">
+                        <!-- Email/Phone Input -->
+                        <div>
+                            <label for="loginEmail" class="block text-sm font-medium text-text-primary mb-2">Email or Phone Number</label>
+                            <input type="text" id="loginEmail" name="loginEmail" 
+                                   class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth"
+                                   placeholder="Enter your email or phone number"
+                                   required>
+                        </div>
+
+                        <!-- Password Input -->
+                        <div>
+                            <label for="loginPassword" class="block text-sm font-medium text-text-primary mb-2">Password</label>
+                            <div class="relative">
+                                <input type="password" id="loginPassword" name="loginPassword" 
+                                       class="w-full px-4 py-3 pr-12 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth"
+                                       placeholder="Enter your password"
+                                       required>
+                                <button type="button" id="toggleLoginPassword" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-text-secondary hover:text-primary transition-smooth">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Remember Me & Forgot Password -->
+                        <div class="flex items-center justify-between">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="w-4 h-4 text-primary border-border rounded focus:ring-primary focus:ring-2">
+                                <span class="ml-2 text-sm text-text-secondary">Remember me</span>
+                            </label>
+                            <button type="button" id="forgotPasswordBtn" class="text-sm text-primary hover:text-primary-600 font-medium transition-smooth">
+                                Forgot Password?
+                            </button>
+                        </div>
+
+                        <!-- Sign In Button -->
+                        <button type="submit" onclick="window.location.href='user_account_dashboard.html'" class="w-full bg-primary hover:bg-primary-600 text-text-inverse py-3 rounded-lg font-medium transition-smooth shadow-gold touch-target">
+                            Sign In
+                        </button>
+
+                        <!-- Social Login Divider -->
+                        <div class="relative my-6">
+                            <div class="absolute inset-0 flex items-center">
+                                <div class="w-full border-t border-border"></div>
+                            </div>
+                            <div class="relative flex justify-center text-sm">
+                                <span class="px-2 bg-background text-text-secondary">Or continue with</span>
+                            </div>
+                        </div>
+
+                        <!-- Social Login Buttons -->
+                        <div class="grid grid-cols-2 gap-3">
+                            <button type="button" class="flex items-center justify-center px-4 py-3 border border-border rounded-lg hover:bg-surface-100 transition-smooth touch-target">
+                                <img src="https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?auto=format&fit=crop&w=24&h=24&q=80" 
+                                     alt="Google" class="w-5 h-5 mr-2"
+                                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                <span class="text-sm font-medium text-text-primary">Google</span>
+                            </button>
+                            <button type="button" class="flex items-center justify-center px-4 py-3 border border-border rounded-lg hover:bg-surface-100 transition-smooth touch-target">
+                                <img src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=24&h=24" 
+                                     alt="Facebook" class="w-5 h-5 mr-2"
+                                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                <span class="text-sm font-medium text-text-primary">Facebook</span>
+                            </button>
+                        </div>
+
+                        <!-- Guest Checkout -->
+                        <div class="text-center pt-4">
+                            <p class="text-sm text-text-secondary mb-3">Don't want to create an account?</p>
+                            <button type="button" onclick="window.location.href='checkout_process.html'" class="text-primary hover:text-primary-600 font-medium text-sm transition-smooth">
+                                Continue as Guest
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Registration Form -->
+                <div id="registerForm" class="p-6 hidden">
+                    <div class="text-center mb-6">
+                        <h2 class="text-2xl font-heading font-bold text-text-primary mb-2">Create Account</h2>
+                        <p class="text-text-secondary">Join Riva Jewels for exclusive offers and faster checkout</p>
+                    </div>
+
+                    <form class="space-y-4">
+                        <!-- Full Name -->
+                        <div>
+                            <label for="registerName" class="block text-sm font-medium text-text-primary mb-2">Full Name</label>
+                            <input type="text" id="registerName" name="registerName" 
+                                   class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth"
+                                   placeholder="Enter your full name"
+                                   required>
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="registerEmail" class="block text-sm font-medium text-text-primary mb-2">Email Address</label>
+                            <input type="email" id="registerEmail" name="registerEmail" 
+                                   class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth"
+                                   placeholder="Enter your email address"
+                                   required>
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div>
+                            <label for="registerPhone" class="block text-sm font-medium text-text-primary mb-2">Phone Number</label>
+                            <div class="flex">
+                                <span class="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-border bg-surface-100 text-text-secondary text-sm">+91</span>
+                                <input type="tel" id="registerPhone" name="registerPhone" 
+                                       class="flex-1 px-4 py-3 border border-border rounded-r-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth"
+                                       placeholder="Enter 10-digit mobile number"
+                                       pattern="[0-9]{10}"
+                                       required>
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div>
+                            <label for="registerPassword" class="block text-sm font-medium text-text-primary mb-2">Password</label>
+                            <div class="relative">
+                                <input type="password" id="registerPassword" name="registerPassword" 
+                                       class="w-full px-4 py-3 pr-12 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth"
+                                       placeholder="Create a strong password"
+                                       required>
+                                <button type="button" id="toggleRegisterPassword" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-text-secondary hover:text-primary transition-smooth">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <!-- Password Strength Indicator -->
+                            <div class="mt-2">
+                                <div class="flex space-x-1">
+                                    <div class="h-1 flex-1 bg-surface-300 rounded"></div>
+                                    <div class="h-1 flex-1 bg-surface-300 rounded"></div>
+                                    <div class="h-1 flex-1 bg-surface-300 rounded"></div>
+                                    <div class="h-1 flex-1 bg-surface-300 rounded"></div>
+                                </div>
+                                <p class="text-xs text-text-tertiary mt-1">Password strength: <span id="passwordStrength">Weak</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Terms & Conditions -->
+                        <div class="flex items-start">
+                            <input type="checkbox" id="termsAccept" class="w-4 h-4 text-primary border-border rounded focus:ring-primary focus:ring-2 mt-1" required>
+                            <label for="termsAccept" class="ml-2 text-sm text-text-secondary">
+                                I agree to the <a href="#" class="text-primary hover:text-primary-600 font-medium">Terms & Conditions</a> and <a href="#" class="text-primary hover:text-primary-600 font-medium">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <!-- Create Account Button -->
+                        <button type="submit" onclick="window.location.href='user_account_dashboard.html'" class="w-full bg-primary hover:bg-primary-600 text-text-inverse py-3 rounded-lg font-medium transition-smooth shadow-gold touch-target">
+                            Create Account
+                        </button>
+
+                        <!-- Social Registration -->
+                        <div class="relative my-6">
+                            <div class="absolute inset-0 flex items-center">
+                                <div class="w-full border-t border-border"></div>
+                            </div>
+                            <div class="relative flex justify-center text-sm">
+                                <span class="px-2 bg-background text-text-secondary">Or sign up with</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <button type="button" class="flex items-center justify-center px-4 py-3 border border-border rounded-lg hover:bg-surface-100 transition-smooth touch-target">
+                                <img src="https://images.pixabay.com/photo/2015/05-28/23/12/icon-788918_1280.png?auto=format&fit=crop&w=24&h=24&q=80" 
+                                     alt="Google" class="w-5 h-5 mr-2"
+                                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                <span class="text-sm font-medium text-text-primary">Google</span>
+                            </button>
+                            <button type="button" class="flex items-center justify-center px-4 py-3 border border-border rounded-lg hover:bg-surface-100 transition-smooth touch-target">
+                                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=24&h=24&q=80" 
+                                     alt="Facebook" class="w-5 h-5 mr-2"
+                                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                <span class="text-sm font-medium text-text-primary">Facebook</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Additional Links -->
+            <div class="text-center mt-6">
+                <p class="text-sm text-text-secondary">
+                    Need help? <a href="#" class="text-primary hover:text-primary-600 font-medium transition-smooth">Contact Support</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" class="fixed inset-0 bg-text-primary bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-background rounded-2xl shadow-floating max-w-md w-full p-6">
+            <div class="text-center mb-6">
+                <h3 class="text-xl font-heading font-bold text-text-primary mb-2">Reset Password</h3>
+                <p class="text-text-secondary">Enter your email address and we'll send you a link to reset your password</p>
+            </div>
+
+            <form class="space-y-4">
+                <div>
+                    <label for="resetEmail" class="block text-sm font-medium text-text-primary mb-2">Email Address</label>
+                    <input type="email" id="resetEmail" name="resetEmail" 
+                           class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth"
+                           placeholder="Enter your email address"
+                           required>
+                </div>
+
+                <div class="flex space-x-3">
+                    <button type="button" id="cancelReset" class="flex-1 px-4 py-3 border border-border rounded-lg text-text-secondary hover:bg-surface-100 transition-smooth">
+                        Cancel
+                    </button>
+                    <button type="submit" class="flex-1 bg-primary hover:bg-primary-600 text-text-inverse px-4 py-3 rounded-lg font-medium transition-smooth">
+                        Send Reset Link
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-text-inverse py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <svg class="w-6 h-6 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M16 2L20 10H28L22 16L24 24L16 20L8 24L10 16L4 10H12L16 2Z"/>
+                    </svg>
+                    <span class="text-lg font-heading font-bold">Riva Jewels</span>
+                </div>
+                <p class="text-text-tertiary text-sm mb-4">
+                    Your trusted destination for premium artificial jewelry
+                </p>
+                <div class="flex justify-center space-x-4 mb-4">
+                    <a href="#" class="text-text-tertiary hover:text-primary transition-smooth">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-text-tertiary hover:text-primary transition-smooth">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                        </svg>
+                    </a>
+                </div>
+                <p class="text-text-tertiary text-xs">
+                    © 2025 Riva Jewels. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Tab Switching and Interactions -->
+    <script>
+        // Tab switching functionality
+        const loginTab = document.getElementById('loginTab');
+        const registerTab = document.getElementById('registerTab');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+
+        loginTab.addEventListener('click', () => {
+            loginTab.classList.add('bg-primary', 'text-text-inverse');
+            loginTab.classList.remove('text-text-secondary', 'hover:text-primary', 'hover:bg-surface-100');
+            registerTab.classList.remove('bg-primary', 'text-text-inverse');
+            registerTab.classList.add('text-text-secondary', 'hover:text-primary', 'hover:bg-surface-100');
+            loginForm.classList.remove('hidden');
+            registerForm.classList.add('hidden');
+        });
+
+        registerTab.addEventListener('click', () => {
+            registerTab.classList.add('bg-primary', 'text-text-inverse');
+            registerTab.classList.remove('text-text-secondary', 'hover:text-primary', 'hover:bg-surface-100');
+            loginTab.classList.remove('bg-primary', 'text-text-inverse');
+            loginTab.classList.add('text-text-secondary', 'hover:text-primary', 'hover:bg-surface-100');
+            registerForm.classList.remove('hidden');
+            loginForm.classList.add('hidden');
+        });
+
+        // Password visibility toggle
+        const toggleLoginPassword = document.getElementById('toggleLoginPassword');
+        const loginPassword = document.getElementById('loginPassword');
+        const toggleRegisterPassword = document.getElementById('toggleRegisterPassword');
+        const registerPassword = document.getElementById('registerPassword');
+
+        toggleLoginPassword.addEventListener('click', () => {
+            const type = loginPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            loginPassword.setAttribute('type', type);
+        });
+
+        toggleRegisterPassword.addEventListener('click', () => {
+            const type = registerPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            registerPassword.setAttribute('type', type);
+        });
+
+        // Forgot password modal
+        const forgotPasswordBtn = document.getElementById('forgotPasswordBtn');
+        const forgotPasswordModal = document.getElementById('forgotPasswordModal');
+        const cancelReset = document.getElementById('cancelReset');
+
+        forgotPasswordBtn.addEventListener('click', () => {
+            forgotPasswordModal.classList.remove('hidden');
+        });
+
+        cancelReset.addEventListener('click', () => {
+            forgotPasswordModal.classList.add('hidden');
+        });
+
+        // Close modal when clicking outside
+        forgotPasswordModal.addEventListener('click', (e) => {
+            if (e.target === forgotPasswordModal) {
+                forgotPasswordModal.classList.add('hidden');
+            }
+        });
+
+        // Password strength indicator (basic implementation)
+        registerPassword.addEventListener('input', (e) => {
+            const password = e.target.value;
+            const strengthIndicator = document.getElementById('passwordStrength');
+            const strengthBars = document.querySelectorAll('.h-1');
+            
+            let strength = 0;
+            if (password.length >= 8) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+
+            // Reset all bars
+            strengthBars.forEach(bar => {
+                bar.classList.remove('bg-error', 'bg-warning', 'bg-success', 'bg-primary');
+                bar.classList.add('bg-surface-300');
+            });
+
+            // Update strength display
+            if (strength === 0) {
+                strengthIndicator.textContent = 'Weak';
+                strengthIndicator.className = 'text-error';
+            } else if (strength <= 2) {
+                strengthIndicator.textContent = 'Fair';
+                strengthIndicator.className = 'text-warning';
+                for (let i = 0; i < strength; i++) {
+                    strengthBars[i].classList.remove('bg-surface-300');
+                    strengthBars[i].classList.add('bg-warning');
+                }
+            } else if (strength === 3) {
+                strengthIndicator.textContent = 'Good';
+                strengthIndicator.className = 'text-success';
+                for (let i = 0; i < strength; i++) {
+                    strengthBars[i].classList.remove('bg-surface-300');
+                    strengthBars[i].classList.add('bg-success');
+                }
+            } else {
+                strengthIndicator.textContent = 'Strong';
+                strengthIndicator.className = 'text-primary';
+                strengthBars.forEach(bar => {
+                    bar.classList.remove('bg-surface-300');
+                    bar.classList.add('bg-primary');
+                });
+            }
+        });
+
+        // Form validation for Indian phone numbers
+        const phoneInput = document.getElementById('registerPhone');
+        phoneInput.addEventListener('input', (e) => {
+            const value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 10) {
+                e.target.value = value;
+            }
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+<script id="dhws-elementInspector" src="../public/dhws-web-inspector.js"></script>
+<script id="dhws-errorTracker" src="../public/dhws-error-tracker.js"></script>
+</body>
+</html>

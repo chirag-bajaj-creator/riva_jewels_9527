@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #D4AF37; /* warm-gold */
+  --color-primary-50: #FEFCF3; /* warm-gold-50 */
+  --color-primary-100: #FDF8E1; /* warm-gold-100 */
+  --color-primary-200: #FAF0C4; /* warm-gold-200 */
+  --color-primary-300: #F6E8A6; /* warm-gold-300 */
+  --color-primary-400: #F2DF89; /* warm-gold-400 */
+  --color-primary-500: #D4AF37; /* warm-gold-500 */
+  --color-primary-600: #B8860B; /* warm-gold-600 */
+  --color-primary-700: #9A7209; /* warm-gold-700 */
+  --color-primary-800: #7C5E07; /* warm-gold-800 */
+  --color-primary-900: #5E4A05; /* warm-gold-900 */
+
+  /* Secondary Colors */
+  --color-secondary: #F8F6F0; /* warm-off-white */
+  --color-secondary-50: #FEFEFE; /* warm-off-white-50 */
+  --color-secondary-100: #FDFCF8; /* warm-off-white-100 */
+  --color-secondary-200: #FBF9F3; /* warm-off-white-200 */
+  --color-secondary-300: #F8F6F0; /* warm-off-white-300 */
+  --color-secondary-400: #F5F3ED; /* warm-off-white-400 */
+  --color-secondary-500: #F2F0EA; /* warm-off-white-500 */
+
+  /* Accent Colors */
+  --color-accent: #B8860B; /* deep-gold */
+  --color-accent-50: #FDF6E3; /* deep-gold-50 */
+  --color-accent-100: #FAEDCC; /* deep-gold-100 */
+  --color-accent-200: #F5DB99; /* deep-gold-200 */
+  --color-accent-300: #F0C966; /* deep-gold-300 */
+  --color-accent-400: #EBB733; /* deep-gold-400 */
+  --color-accent-500: #B8860B; /* deep-gold-500 */
+  --color-accent-600: #9A7209; /* deep-gold-600 */
+  --color-accent-700: #7C5E07; /* deep-gold-700 */
+
+  /* Background Colors */
+  --color-background: #FFFFFF; /* pure-white */
+  --color-surface: #FAFAFA; /* subtle-gray */
+  --color-surface-50: #FEFEFE; /* subtle-gray-50 */
+  --color-surface-100: #FDFDFD; /* subtle-gray-100 */
+  --color-surface-200: #FCFCFC; /* subtle-gray-200 */
+  --color-surface-300: #FAFAFA; /* subtle-gray-300 */
+  --color-surface-400: #F8F8F8; /* subtle-gray-400 */
+  --color-surface-500: #F5F5F5; /* subtle-gray-500 */
+
+  /* Text Colors */
+  --color-text-primary: #2C2C2C; /* warm-charcoal */
+  --color-text-secondary: #6B6B6B; /* medium-gray */
+  --color-text-tertiary: #9CA3AF; /* light-gray */
+  --color-text-inverse: #FFFFFF; /* white */
+
+  /* Status Colors */
+  --color-success: #10B981; /* emerald-500 */
+  --color-success-50: #ECFDF5; /* emerald-50 */
+  --color-success-100: #D1FAE5; /* emerald-100 */
+  --color-success-500: #10B981; /* emerald-500 */
+  --color-success-600: #059669; /* emerald-600 */
+
+  --color-warning: #F59E0B; /* amber-500 */
+  --color-warning-50: #FFFBEB; /* amber-50 */
+  --color-warning-100: #FEF3C7; /* amber-100 */
+  --color-warning-500: #F59E0B; /* amber-500 */
+  --color-warning-600: #D97706; /* amber-600 */
+
+  --color-error: #EF4444; /* red-500 */
+  --color-error-50: #FEF2F2; /* red-50 */
+  --color-error-100: #FEE2E2; /* red-100 */
+  --color-error-500: #EF4444; /* red-500 */
+  --color-error-600: #DC2626; /* red-600 */
+
+  /* Border Colors */
+  --color-border: #F0F0F0; /* light-border */
+  --color-border-light: #F5F5F5; /* lighter-border */
+  --color-border-dark: #E5E5E5; /* darker-border */
+
+  /* Shadow Colors */
+  --shadow-gold: rgba(212, 175, 55, 0.1); /* gold-shadow */
+  --shadow-soft: rgba(0, 0, 0, 0.08); /* soft-shadow */
+  --shadow-medium: rgba(0, 0, 0, 0.12); /* medium-shadow */
+}
+
+/* Custom animations */
+@keyframes gentle-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.02);
+  }
+}
+
+.animate-gentle-pulse {
+  animation: gentle-pulse 2s ease-in-out infinite;
+}
+
+.animate-scale-in {
+  animation: scale-in 200ms ease-out forwards;
+}
+
+/* Custom utility classes */
+.shadow-gold {
+  box-shadow: 0 2px 8px var(--shadow-gold);
+}
+
+.shadow-floating {
+  box-shadow: 0 4px 16px var(--shadow-soft);
+}
+
+.shadow-card {
+  box-shadow: 0 1px 3px var(--shadow-soft);
+}
+
+.transition-smooth {
+  transition: all 150ms ease-out;
+}
+
+.transition-medium {
+  transition: all 200ms ease-out;
+}
+
+.transition-slow {
+  transition: all 300ms ease-out;
+}
+
+/* Touch-friendly interactions */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Product card hover effects */
+.product-card {
+  transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px var(--shadow-soft);
+}
+
+/* Floating elements */
+.floating-element {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
